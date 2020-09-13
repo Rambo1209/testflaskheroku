@@ -15,15 +15,7 @@ def home():
 	if(request.method == 'GET'): 
 
 		data = "hello world"
-		
-		# a Python object (dict):
-		x = {
-  			"name": "John"
-		}
-
-		# convert into JSON:
-		y = json.dumps(x)
-		return y 
+        	return jsonify({'data': data}) 
 
 
 # A simple function to calculate the square of a number 
