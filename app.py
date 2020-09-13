@@ -1,6 +1,8 @@
 # Using flask to make an api 
 # import necessary libraries and functions 
 from flask import Flask, jsonify, request 
+import json
+
 
 # creating a Flask app 
 app = Flask(__name__) 
@@ -13,7 +15,15 @@ def home():
 	if(request.method == 'GET'): 
 
 		data = "hello world"
-		return jsonify({'data': data}) 
+		
+		# a Python object (dict):
+		x = {
+  			"name": "John"
+		}
+
+		# convert into JSON:
+		y = json.dumps(x)
+		return y 
 
 
 # A simple function to calculate the square of a number 
